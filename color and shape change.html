@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- css here -->
+    <style type="text/css">
+        body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100vh;
+  margin: 0;
+  background-color: #d4cece;
+}
+
+/* outer shape */
+#shape-container {
+  width: 30vh;
+  height: 30vh;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #247db8;
+  margin-bottom: 10vh;
+}
+
+
+/* style button */
+button{
+  border: none;
+  background: none;
+  cursor: pointer;
+  padding: 5px 5px;
+  background-color: #ded6d6;
+  border-radius: 5px;
+  margin: 10px;
+  
+  
+}
+button:hover{
+    background-color: #b5b9bd;
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* shapes for inner box */
+.square{
+    width: 16vh;
+    height: 16vh;
+    background-color: white;
+}
+
+.circle {
+  width: 20vh;
+  height: 20vh;
+  background-color: white;
+  border-radius: 50%;
+}
+
+.oval {
+  width: 25vh;
+  height: 20vh;
+  background-color: white;
+  border-radius: 50%;
+}
+
+.triangle {
+  border-left: 0vh solid transparent;
+  border-right: 16vh solid transparent;
+  border-bottom: 16vh solid white;
+}
+    </style>
+
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>color change and shape change</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <div id="shape-container">
+<div id="shape" class="square"></div>
+  </div>
+  <button id="change-color-btn" onclick="changeColor()">Change Color</button>
+  <button id="change-shape-btn" onclick="changeShape()">Change Shape</button>
+ 
+ 
+  <!-- javaScript code -->
+ <script>
+    const colors = ["red", "blue", "orange", "cyan", "purple"];
+const shapes = ["square", "circle", "triangle", "oval"];
+
+function changeColor() {
+  const shape = document.getElementById("shape-container");
+  const randomColor = colors[Math.floor(Math.random() * colors.length)];
+  shape.style.backgroundColor = randomColor;
+}
+
+function changeShape() {
+  const shape = document.getElementById("shape");
+  const randomShape = shapes[Math.floor(Math.random() * shapes.length)];
+  shape.className = randomShape;
+}
+
+  </script>
+</body>
+</html>
